@@ -9,7 +9,8 @@ import com.mygdx.game.Screens.PlayScreen;
 
 public class Main extends Game {
 	public SpriteBatch batch;
-	public int width = 1600, height = 900;
+	public static int width = 1600, height = 900;
+	public static float PPM = 100;
 	
 	@Override
 	public void create () {

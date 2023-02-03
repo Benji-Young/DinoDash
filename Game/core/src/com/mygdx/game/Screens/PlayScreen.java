@@ -7,6 +7,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Main;
+import com.mygdx.game.Scenes.Hud;
 
 public class PlayScreen implements Screen {
 
@@ -14,12 +15,14 @@ public class PlayScreen implements Screen {
     Texture texture;
     private OrthographicCamera gameCam;
     private Viewport gamePort;
+    private Hud hud;
 
     public PlayScreen(Main game){
         this.game = game;
         texture = new Texture("badlogic.jpg");
         gameCam = new OrthographicCamera();
         gamePort = new FitViewport(this.game.width, this.game.height, gameCam);
+        hud = new Hud(game.batch);
     }
 
     @Override
@@ -30,7 +33,8 @@ public class PlayScreen implements Screen {
     @Override
     public void render(float delta) {
         ScreenUtils.clear(1, 0, 0, 1);
-        game.batch.setProjectionMatrix(gameCam.combined);
+        game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
+        hud.stage.draw();
         game.batch.begin();
         game.batch.draw(texture, 0,0);
         game.batch.end();
