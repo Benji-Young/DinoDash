@@ -1,4 +1,4 @@
-package com.mygdx.dinodash;
+package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.Texture;
