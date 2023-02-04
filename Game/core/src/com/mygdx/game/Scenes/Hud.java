@@ -30,7 +30,7 @@ public class Hud {
         table.top();
         table.setFillParent(true);
 
-        scoreLabel = new Label("Time " + score, new Label.LabelStyle(new BitmapFont(), Color.WHITE));
+        scoreLabel = new Label("Score " + score, new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         scoreLabel.setFontScale(5f);
 
         table.add(scoreLabel).expandX().padTop(10);
