@@ -1,0 +1,33 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "ground.tsx": {
+            "scaleInEditor": 1
+        }
+    },
+    "frame.defaultDuration": 500,
+    "last.imagePath": "C:/Users/benja/.templateengine/Desktop/dinodashsprites",
+    "map.fixedSize": true,
+    "map.height": 5,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 256,
+    "map.tileWidth": 256,
+    "map.width": 8,
+    "openFiles": [
+    ],
+    "project": "tiledMap.tiled-project",
+    "recentFiles": [
+        "ground.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 256,
+        "width": 256
+    }
+}

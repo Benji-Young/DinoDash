@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="5" tilewidth="256" tileheight="256" infinite="0" nextlayerid="4" nextobjectid="1">
+ <tileset firstgid="1" source="ground.tsx"/>
+ <tileset firstgid="5" source="backGROUND.tsx"/>
+ <tileset firstgid="9" source="animatedGround1.tsx"/>
+ <tileset firstgid="13" source="brightbackground.tsx"/>
+ <layer id="3" name="backgroundLayer" width="8" height="5">
+  <data encoding="csv">
+14,14,14,14,14,14,14,14,
+14,14,13,14,14,13,14,14,
+14,14,14,14,14,14,14,14,
+14,14,14,14,14,14,14,14,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="2" name="groundLayer" width="8" height="5">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+9,10,11,12,9,10,11,12,
+5,6,7,8,5,6,7,8
+</data>
+ </layer>
+</map>

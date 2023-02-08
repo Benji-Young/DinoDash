@@ -3,6 +3,9 @@ package com.mygdx.game.Screens;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -16,6 +19,9 @@ public class PlayScreen implements Screen {
     private OrthographicCamera gameCam;
     private Viewport gamePort;
     private Hud hud;
+    private TmxMapLoader maploader;
+    private TiledMap map;
+    private OrthogonalTiledMapRenderer renderer;
 
     public PlayScreen(Main game){
         this.game = game;
@@ -23,6 +29,12 @@ public class PlayScreen implements Screen {
         gameCam = new OrthographicCamera();
         gamePort = new FitViewport(this.game.width, this.game.height, gameCam);
         hud = new Hud(game.batch);
+
+        maploader = new TmxMapLoader();
+        map = maploader.load("map/TiledMap.tmx");
+        renderer = new OrthogonalTiledMapRenderer(map);
+
+        gameCam.position.set(gamePort.getWorldWidth()/2, gamePort.getWorldHeight()/2, 0);
     }
 
     @Override
@@ -30,14 +42,18 @@ public class PlayScreen implements Screen {
 
     }
 
+    public void update(float delta){
+        gameCam.update();
+        renderer.setView(gameCam);
+    }
+
     @Override
     public void render(float delta) {
-        ScreenUtils.clear(1, 0, 0, 1);
-        game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
-        hud.stage.draw();
-        game.batch.begin();
-        game.batch.draw(texture, 0,0);
-        game.batch.end();
+        update(delta);
+
+        ScreenUtils.clear(0, 0, 0, 1);
+
+        renderer.render();
     }
 
     @Override
