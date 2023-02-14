@@ -3,11 +3,37 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "TiledMap.tmx",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
+        "TiledMap.tmx": {
+            "scale": 0.36181640625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1023.9999999999998,
+                "y": 642.5910931174087
+            }
+        },
+        "animatedGround1.tsx": {
+            "scaleInDock": 0.25,
+            "scaleInEditor": 1
+        },
+        "backGROUND.tsx": {
+            "scaleInDock": 0.33,
+            "scaleInEditor": 1
+        },
+        "brightbackground.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "clouds.tsx": {
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
         "ground.tsx": {
+            "scaleInDock": 0.25,
             "scaleInEditor": 1
         }
     },
@@ -20,10 +46,21 @@
     "map.tileWidth": 256,
     "map.width": 8,
     "openFiles": [
+        "TiledMap.tmx",
+        "backGROUND.tsx",
+        "animatedGround1.tsx",
+        "clouds.tsx",
+        "brightbackground.tsx",
+        "ground.tsx"
     ],
     "project": "tiledMap.tiled-project",
     "recentFiles": [
-        "ground.tsx"
+        "ground.tsx",
+        "brightbackground.tsx",
+        "clouds.tsx",
+        "animatedGround1.tsx",
+        "backGROUND.tsx",
+        "TiledMap.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
