@@ -21,6 +21,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Main;
 import com.mygdx.game.Scenes.Hud;
+import com.mygdx.game.Sprites.Dino;
 
 public class PlayScreen implements Screen {
 
@@ -36,6 +37,8 @@ public class PlayScreen implements Screen {
     private World world;
     private Box2DDebugRenderer b2dr;
 
+    private Dino player;
+
     public PlayScreen(Main game){
         this.game = game;
         texture = new Texture("badlogic.jpg");
@@ -49,7 +52,7 @@ public class PlayScreen implements Screen {
 
         gameCam.position.set(gamePort.getWorldWidth()/2, gamePort.getWorldHeight()/2, 0);
 
-        world = new World(new Vector2(0, 0), true);
+        world = new World(new Vector2(0, -10), true);
         b2dr = new Box2DDebugRenderer();
 
         //Create body
@@ -70,6 +73,9 @@ public class PlayScreen implements Screen {
             fdef.shape = shape;
             body.createFixture(fdef);
         }
+
+        player = new Dino(world);
+
     }
 
     @Override
@@ -78,6 +84,9 @@ public class PlayScreen implements Screen {
     }
 
     public void update(float delta){
+
+        world.step(1/60f, 6, 2);
+
         gameCam.update();
         renderer.setView(gameCam);
     }
